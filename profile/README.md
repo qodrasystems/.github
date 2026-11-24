@@ -33,6 +33,16 @@
   <a href="https://qodrasystems.com/en/services.html" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/card-custom-dark.svg"><source media="(prefers-color-scheme: light)" srcset="./assets/card-custom-light.svg"><img alt="Custom Systems and Apps" src="./assets/card-custom-dark.svg" width="49.2%"></picture></a>
 </p>
 
+<p align="center">
+  <a href="https://qodrasystems.com/en/systems.html" target="_blank">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./assets/qodra-suite-dark.svg?v=1">
+      <source media="(prefers-color-scheme: light)" srcset="./assets/qodra-suite-light.svg?v=1">
+      <img alt="Qodra OS Complete 12-Module Enterprise Suite — ERP, POS, Inventory, Purchasing, HR, CRM, AI Agents, Indoor Navigation & Sector Systems" src="./assets/qodra-suite-dark.svg?v=1" width="100%">
+    </picture>
+  </a>
+</p>
+
 ---
 
 <p align="center">
