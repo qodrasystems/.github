@@ -1,25 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="152" height="40" viewBox="0 0 152 40" role="img" aria-label="Contact Us">
+<svg xmlns="http://www.w3.org/2000/svg" width="158" height="38" viewBox="0 0 158 38" role="img" aria-label="Contact Sales">
   <defs>
-    
-    <linearGradient id="obtn_btn-contact_dark" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#191830"/>
-      <stop offset="100%" stop-color="#141326"/>
+    <linearGradient id="ob_btn-contact_dark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141928"/>
+      <stop offset="100%" stop-color="#101420"/>
     </linearGradient>
-    <linearGradient id="obsheen_btn-contact_dark" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.10"/>
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
-    </linearGradient>
-    <clipPath id="obclip_btn-contact_dark">
-      <rect x="0.5" y="0.5" width="151" height="39" rx="10"/>
+    <clipPath id="obc_btn-contact_dark">
+      <rect x="0.5" y="0.5" width="157" height="37" rx="9"/>
     </clipPath>
   </defs>
-  <g clip-path="url(#obclip_btn-contact_dark)">
-    <rect width="152" height="40" fill="url(#obtn_btn-contact_dark)"/>
-    <rect x="0" y="1" width="152" height="1" fill="url(#obsheen_btn-contact_dark)"/>
-    
-    <g transform="translate(26.0, 11.5) scale(0.71)" fill="none" stroke="#A296FA" stroke-width="1.95" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3.2 6.2l7.6 5.4a2 2 0 0 0 2.4 0l7.6-5.4"/></g>
-    <text x="51.0" y="24.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#EEEBFF">Contact Us</text>
+  <g clip-path="url(#obc_btn-contact_dark)">
+    <rect width="158" height="38" fill="url(#ob_btn-contact_dark)"/>
+    <g transform="translate(18.4, 10.5) scale(0.70)" fill="none" stroke="#818CF8" stroke-width="1.95" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3.2 6.2l7.6 5.4a2 2 0 0 0 2.4 0l7.6-5.4"/></g>
+    <text x="42.4" y="23.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#E2E8F0">Contact Sales</text>
   </g>
-  <rect x="0.5" y="0.5" width="151" height="39" rx="10" fill="none" stroke="#322E56" stroke-width="1"/>
+  <rect x="0.5" y="0.5" width="157" height="37" rx="9" fill="none" stroke="#252D46" stroke-width="1"/>
 </svg>

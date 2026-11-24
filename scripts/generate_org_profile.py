@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
-Qodra Systems — Official GitHub Organization Profile Generator (qodrasystems/.github)
-Generates dual-theme (dark + light) animated vector SVG assets for github.com/qodrasystems.
+Qodra Systems — Official GitHub Organization Profile Generator (v3)
+- Harmonized Obsidian-Slate dark / Cool-White light surfaces with strict 2-accent discipline (Indigo + Emerald).
+- Exclusively owns the iconic Qodra hexagonal constellation hero + 3-Layer Enterprise Architecture Diagram.
+- >= 12px typography floor everywhere for crisp mobile & cross-OS legibility.
 """
 import math
 import xml.etree.ElementTree as ET
@@ -28,10 +30,6 @@ def hex_points(cx, cy, r, flat_top=True):
         rad = math.radians(angle_deg)
         pts.append(f"{cx + r * math.cos(rad):.2f},{cy + r * math.sin(rad):.2f}")
     return " ".join(pts)
-
-
-def pill_width(label: str, min_w=54, char_w=7.4, pad=24):
-    return max(min_w, int(round(len(label) * char_w + pad)))
 
 
 def qodra_logo_group(tx, ty, scale, mode="dark", uid="q"):
@@ -66,172 +64,147 @@ def qodra_logo_group(tx, ty, scale, mode="dark", uid="q"):
 
 
 # ---------------------------------------------------------------------------
-# 1. ORGANIZATION HERO BANNER (840 x 276)
+# 1. QODRA SYSTEMS SIGNATURE ORG HERO (840 x 264, >=54px text-to-hex gutter)
 # ---------------------------------------------------------------------------
 def build_org_hero(mode="dark"):
-    W, H = 840, 276
+    W, H = 840, 264
     if mode == "dark":
-        bg1, bg2 = "#100F24", "#181634"
-        border = "#2F2C52"
-        sheen_op = "0.14"
-        ink = "#F6F4FF"
-        sub_accent = "#A296FA"
-        muted = "#BCB8D4"
-        pill_bg = "#1D1B38"
-        pill_border = "#35315E"
-        badge_bg = "#201D40"
-        badge_border = "#3E3972"
-        hex_stroke = "#3A3666"
-        center_hex_fill = "#111024"
-        center_hex_stroke = "#655DF0"
-        glow_color = "#5A52EA"
-        glow_opacity = "0.34"
-        dot_color = "#4FBF92"
-        chip_text = "#DCD7FF"
-        grid_dot = "#9A8DF8"
-        grid_op = "0.10"
-        pulse_color = "#A5B4FC"
+        bg1, bg2 = "#0F131E", "#141A29"
+        border = "#232B42"
+        sheen_op = "0.10"
+        ink = "#F8FAFC"
+        accent = "#818CF8"
+        muted = "#9BA6C0"
+        pill_bg = "#141B2B"
+        pill_border = "#242E48"
+        pill_fg = "#CBD5E1"
+        badge_bg = "#161D30"
+        badge_border = "#2B3656"
+        hex_stroke = "#2B3554"
+        sat_fill = "#151C2E"
+        sat_stroke = "#2E3A5E"
+        sat_text = "#E2E8F0"
+        center_hex_fill = "#0D111C"
+        center_hex_stroke = "#6366F1"
+        glow_color = "#6366F1"
+        glow_op = "0.24"
+        dot_live = "#34D399"
+        grid_dot = "#818CF8"
+        grid_op = "0.08"
     else:
-        bg1, bg2 = "#FCFBF8", "#F3F0E8"
-        border = "#DDD8CE"
+        bg1, bg2 = "#FFFFFF", "#F8FAFC"
+        border = "#E2E8F0"
         sheen_op = "0.90"
-        ink = "#17162B"
-        sub_accent = "#4338CA"
-        muted = "#4D4A61"
+        ink = "#0F172A"
+        accent = "#4F46E5"
+        muted = "#475569"
         pill_bg = "#FFFFFF"
-        pill_border = "#DDD8CE"
-        badge_bg = "#EBE9FE"
-        badge_border = "#C7C2FA"
-        hex_stroke = "#CFC9E6"
-        center_hex_fill = "#1B1A33"
+        pill_border = "#E2E8F0"
+        pill_fg = "#334155"
+        badge_bg = "#EEF2FF"
+        badge_border = "#C7D2FE"
+        hex_stroke = "#CBD5E1"
+        sat_fill = "#FFFFFF"
+        sat_stroke = "#CBD5E1"
+        sat_text = "#1E293B"
+        center_hex_fill = "#0F172A"
         center_hex_stroke = "#4F46E5"
         glow_color = "#4F46E5"
-        glow_opacity = "0.14"
-        dot_color = "#166549"
-        chip_text = "#312E81"
+        glow_op = "0.10"
+        dot_live = "#059669"
         grid_dot = "#4F46E5"
-        grid_op = "0.09"
-        pulse_color = "#4F46E5"
+        grid_op = "0.07"
 
-    cx, cy = 694, 138
-    r_center = 42
-    ring_dist = 78
-    r_sat = 29
+    # Positioned cleanly on the right (leftmost satellite edge = 702 - 64 - 28 = 610px; left text <= 515px -> 95px gutter!)
+    cx, cy = 702, 132
+    r_center = 40
+    ring_dist = 74
+    r_sat = 28
 
     satellites = [
-        (0, "AI", "#5A52EA" if mode == "dark" else "#4338CA", "3.6s", "0s"),
-        (60, "ERP", "#2E7564" if mode == "dark" else "#166549", "4.2s", "0.7s"),
-        (120, "POS", "#9C5B82" if mode == "dark" else "#8A4570", "3.9s", "1.4s"),
-        (180, "NAV", "#8B5CF6" if mode == "dark" else "#6D28D9", "4.5s", "2.1s"),
-        (240, "CLOUD", "#3B82F6" if mode == "dark" else "#1D4ED8", "3.8s", "2.8s"),
-        (300, "HR", "#C89B3C" if mode == "dark" else "#9A6B16", "4.4s", "3.5s"),
+        (0, "AI", True),
+        (60, "ERP", True),
+        (120, "POS", False),
+        (180, "NAV", False),
+        (240, "CLOUD", False),
+        (300, "HR", False),
     ]
 
     sat_svgs = [
-        f'<circle cx="{cx}" cy="{cy}" r="{ring_dist}" fill="none" stroke="{hex_stroke}" stroke-opacity="0.40" stroke-width="1" stroke-dasharray="3 5"/>'
+        f'<circle cx="{cx}" cy="{cy}" r="{ring_dist}" fill="none" stroke="{hex_stroke}" stroke-opacity="0.55" stroke-width="1" stroke-dasharray="3 5"/>'
     ]
-    for deg in range(30, 360, 60):
-        rad = math.radians(deg)
-        ox = cx + 140 * math.cos(rad)
-        oy = cy + 140 * math.sin(rad)
-        sat_svgs.append(
-            f'<polygon points="{hex_points(ox, oy, 26, True)}" fill="none" stroke="{hex_stroke}" stroke-opacity="0.28" stroke-width="1"/>'
-        )
-
-    for deg, label, tint, dur, begin in satellites:
+    for deg, label, is_key in satellites:
         rad = math.radians(deg - 30)
         sx = cx + ring_dist * math.cos(rad)
         sy = cy + ring_dist * math.sin(rad)
-        x1 = cx + (r_center + 2) * math.cos(rad)
-        y1 = cy + (r_center + 2) * math.sin(rad)
-        x2 = sx - (r_sat + 1) * math.cos(rad)
-        y2 = sy - (r_sat + 1) * math.sin(rad)
         sat_svgs.append(
-            f'<line x1="{cx:.1f}" y1="{cy:.1f}" x2="{sx:.1f}" y2="{sy:.1f}" stroke="{hex_stroke}" stroke-opacity="0.65" stroke-width="1.1"/>'
+            f'<line x1="{cx:.1f}" y1="{cy:.1f}" x2="{sx:.1f}" y2="{sy:.1f}" stroke="{hex_stroke}" stroke-opacity="0.7" stroke-width="1.1"/>'
         )
-        sat_svgs.append(f"""
-        <circle r="2.2" fill="{pulse_color}" opacity="0">
-          <animateMotion dur="{dur}" begin="{begin}" repeatCount="indefinite" path="M {x1:.1f} {y1:.1f} L {x2:.1f} {y2:.1f}"/>
-          <animate attributeName="opacity" values="0;0.95;0.95;0" keyTimes="0;0.18;0.82;1" dur="{dur}" begin="{begin}" repeatCount="indefinite"/>
-        </circle>
-        """)
-        fill_op = "0.22" if mode == "dark" else "0.10"
-        stroke_op = "0.58" if mode == "dark" else "0.38"
+        stroke_col = accent if is_key else sat_stroke
         sat_svgs.append(
-            f'<polygon points="{hex_points(sx, sy, r_sat, True)}" fill="{tint}" fill-opacity="{fill_op}" stroke="{tint}" stroke-opacity="{stroke_op}" stroke-width="1.2"/>'
+            f'<polygon points="{hex_points(sx, sy, r_sat, True)}" fill="{sat_fill}" stroke="{stroke_col}" stroke-opacity="{0.85 if is_key else 0.9}" stroke-width="1.2"/>'
         )
         sat_svgs.append(
-            f'<text x="{sx:.1f}" y="{sy + 3.8:.1f}" text-anchor="middle" font-family="{FONT_MONO}" font-size="9.5" font-weight="700" letter-spacing="0.6" fill="{ink if mode == "dark" else tint}" fill-opacity="0.94">{escape(label)}</text>'
+            f'<text x="{sx:.1f}" y="{sy + 3.8:.1f}" text-anchor="middle" font-family="{FONT_MONO}" font-size="10" font-weight="700" letter-spacing="0.6" fill="{accent if is_key else sat_text}">{escape(label)}</text>'
         )
 
-    logo_defs, logo_paths = qodra_logo_group(cx, cy, 0.14, mode="dark", uid=f"org_hero_{mode}")
+    logo_defs, logo_paths = qodra_logo_group(cx, cy, 0.135, mode="dark", uid=f"oh_{mode}")
 
     chips = [
-        ("Amman, Jordan", 34, 140, '<path d="M6 11s3.5-3.1 3.5-5.8a3.5 3.5 0 1 0-7 0C2.5 7.9 6 11 6 11z"/><circle cx="6" cy="5.2" r="1.2"/>'),
-        ("qodrasystems.com", 184, 160, '<circle cx="6" cy="6" r="4.6"/><path d="M1.4 6h9.2M6 1.4a7 7 0 0 1 0 9.2 7 7 0 0 1 0-9.2z"/>'),
-        ("info@qodrasystems.com", 354, 188, '<rect x="1.2" y="2.2" width="9.6" height="7.6" rx="1.4"/><path d="M1.6 3.2l4.4 3.1 4.4-3.1"/>'),
+        ("Amman, Jordan", 32, 138, '<path d="M6 11s3.5-3.1 3.5-5.8a3.5 3.5 0 1 0-7 0C2.5 7.9 6 11 6 11z"/><circle cx="6" cy="5.2" r="1.2"/>'),
+        ("qodrasystems.com", 180, 158, '<circle cx="6" cy="6" r="4.6"/><path d="M1.4 6h9.2M6 1.4a7 7 0 0 1 0 9.2 7 7 0 0 1 0-9.2z"/>'),
+        ("info@qodrasystems.com", 348, 184, '<rect x="1.2" y="2.2" width="9.6" height="7.6" rx="1.4"/><path d="M1.6 3.2l4.4 3.1 4.4-3.1"/>'),
     ]
     chip_svgs = []
     for text, x, w, icon in chips:
         chip_svgs.append(f"""
-        <rect x="{x}" y="210" width="{w}" height="30" rx="8" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/>
-        <g transform="translate({x + 11}, 219)" fill="none" stroke="{sub_accent}" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">{icon}</g>
-        <text x="{x + 29}" y="229.2" font-family="{FONT_SANS}" font-size="11.6" font-weight="500" fill="{chip_text}">{escape(text)}</text>
+        <rect x="{x}" y="200" width="{w}" height="30" rx="8" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/>
+        <g transform="translate({x + 11}, 209)" fill="none" stroke="{accent}" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">{icon}</g>
+        <text x="{x + 29}" y="219.2" font-family="{FONT_SANS}" font-size="11.8" font-weight="500" fill="{pill_fg}">{escape(text)}</text>
         """)
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Qodra Systems — Enterprise Operating Systems, AI Agents and Custom Software">
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Qodra Systems — Enterprise Operating Systems, AI Agents, and Custom Software">
   <defs>
     <style>
       .beacon-ring {{
         transform-box: fill-box;
         transform-origin: center;
-        animation: beacon 2.8s cubic-bezier(0.2, 0.7, 0.3, 1) infinite;
+        animation: beacon 3s cubic-bezier(0.2, 0.7, 0.3, 1) infinite;
       }}
-      .core-glow {{ animation: breathe 4.6s ease-in-out infinite; }}
       @keyframes beacon {{
-        0% {{ transform: scale(1); opacity: 0.72; }}
-        70% {{ transform: scale(2.4); opacity: 0; }}
+        0% {{ transform: scale(1); opacity: 0.7; }}
+        72% {{ transform: scale(2.4); opacity: 0; }}
         100% {{ transform: scale(2.4); opacity: 0; }}
       }}
-      @keyframes breathe {{
-        0%, 100% {{ opacity: 0.78; }}
-        50% {{ opacity: 1; }}
-      }}
-      @media (prefers-reduced-motion: reduce) {{ .beacon-ring, .core-glow {{ animation: none !important; }} }}
+      @media (prefers-reduced-motion: reduce) {{ .beacon-ring {{ animation: none !important; }} }}
     </style>
     <linearGradient id="obg_{mode}" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="{bg1}"/>
       <stop offset="100%" stop-color="{bg2}"/>
     </linearGradient>
-    <radialGradient id="oglow_{mode}" cx="82%" cy="50%" r="42%">
-      <stop offset="0%" stop-color="{glow_color}" stop-opacity="{glow_opacity}"/>
+    <radialGradient id="oglow_{mode}" cx="83%" cy="50%" r="38%">
+      <stop offset="0%" stop-color="{glow_color}" stop-opacity="{glow_op}"/>
       <stop offset="100%" stop-color="{glow_color}" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="osheen_{mode}" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
-      <stop offset="30%" stop-color="#FFFFFF" stop-opacity="{sheen_op}"/>
-      <stop offset="70%" stop-color="#FFFFFF" stop-opacity="{sheen_op}"/>
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
-    </linearGradient>
     <linearGradient id="otop_{mode}" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#4F46E5" stop-opacity="0"/>
-      <stop offset="26%" stop-color="#6366F1" stop-opacity="0.92"/>
-      <stop offset="74%" stop-color="#A5B4FC" stop-opacity="0.92"/>
-      <stop offset="100%" stop-color="#4F46E5" stop-opacity="0"/>
+      <stop offset="0%" stop-color="{accent}" stop-opacity="0"/>
+      <stop offset="30%" stop-color="{accent}" stop-opacity="0.85"/>
+      <stop offset="70%" stop-color="{accent}" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="{accent}" stop-opacity="0"/>
     </linearGradient>
-    <pattern id="odots_{mode}" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+    <pattern id="odots_{mode}" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
       <circle cx="2" cy="2" r="1" fill="{grid_dot}" fill-opacity="{grid_op}"/>
     </pattern>
     <linearGradient id="odfade_{mode}" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0"/>
-      <stop offset="78%" stop-color="#FFFFFF" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="56%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="84%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.7"/>
     </linearGradient>
     <mask id="odmask_{mode}">
       <rect width="{W}" height="{H}" fill="url(#odfade_{mode})"/>
     </mask>
     <clipPath id="oclip_{mode}">
-      <rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="16"/>
+      <rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="14"/>
     </clipPath>
     {logo_defs}
   </defs>
@@ -239,453 +212,233 @@ def build_org_hero(mode="dark"):
   <g clip-path="url(#oclip_{mode})">
     <rect width="{W}" height="{H}" fill="url(#obg_{mode})"/>
     <rect width="{W}" height="{H}" fill="url(#odots_{mode})" mask="url(#odmask_{mode})"/>
-    <rect width="{W}" height="{H}" fill="url(#oglow_{mode})" class="core-glow"/>
-    <rect x="0" y="0" width="{W}" height="2.5" fill="url(#otop_{mode})"/>
-    <rect x="0" y="2.5" width="{W}" height="1" fill="url(#osheen_{mode})"/>
+    <rect width="{W}" height="{H}" fill="url(#oglow_{mode})"/>
+    <rect x="0" y="0" width="{W}" height="2" fill="url(#otop_{mode})"/>
+    <line x1="20" y1="2.5" x2="{W-20}" y2="2.5" stroke="#FFFFFF" stroke-opacity="{sheen_op}" stroke-width="1"/>
 
     {''.join(sat_svgs)}
-    <polygon points="{hex_points(cx, cy, r_center + 6, True)}" fill="none" stroke="{center_hex_stroke}" stroke-opacity="0.32" stroke-width="1"/>
+    <polygon points="{hex_points(cx, cy, r_center + 6, True)}" fill="none" stroke="{center_hex_stroke}" stroke-opacity="0.30" stroke-width="1"/>
     <polygon points="{hex_points(cx, cy, r_center, True)}" fill="{center_hex_fill}" stroke="{center_hex_stroke}" stroke-width="1.8"/>
     {logo_paths}
 
-    <rect x="34" y="34" width="298" height="28" rx="14" fill="{badge_bg}" stroke="{badge_border}" stroke-width="1"/>
-    <circle cx="50" cy="48" r="4" fill="{dot_color}" class="beacon-ring"/>
-    <circle cx="50" cy="48" r="3.8" fill="{dot_color}"/>
-    <text x="63" y="52.2" font-family="{FONT_MONO}" font-size="10.8" font-weight="700" letter-spacing="0.9" fill="{sub_accent}">ENTERPRISE SYSTEMS &amp; AI · JORDAN</text>
+    <rect x="32" y="30" width="290" height="28" rx="14" fill="{badge_bg}" stroke="{badge_border}" stroke-width="1"/>
+    <circle cx="48" cy="44" r="4" fill="{dot_live}" class="beacon-ring"/>
+    <circle cx="48" cy="44" r="3.6" fill="{dot_live}"/>
+    <text x="61" y="48.2" font-family="{FONT_MONO}" font-size="10.8" font-weight="700" letter-spacing="0.9" fill="{accent}">ENTERPRISE SYSTEMS &amp; AI · JORDAN</text>
 
-    <text x="34" y="106" font-family="{FONT_SANS}" font-size="36" font-weight="700" letter-spacing="-0.8" fill="{ink}">Qodra Systems</text>
+    <text x="32" y="102" font-family="{FONT_SANS}" font-size="36" font-weight="700" letter-spacing="-0.8" fill="{ink}">Qodra Systems</text>
 
-    <text x="34" y="133" font-family="{FONT_SANS}" font-size="14.5" font-weight="600" fill="{sub_accent}">Unified Business OS  ·  Governed AI Agents  ·  Custom Platforms</text>
+    <text x="32" y="129" font-family="{FONT_SANS}" font-size="14.5" font-weight="600" fill="{accent}">Unified Business OS  ·  Governed AI Agents  ·  Custom Platforms</text>
 
-    <text x="34" y="163" font-family="{FONT_SANS}" font-size="13.5" font-weight="400" fill="{muted}">We engineer business management systems, permission-aware AI agents,</text>
-    <text x="34" y="184" font-family="{FONT_SANS}" font-size="13.5" font-weight="400" fill="{muted}">GPS-free indoor navigation platforms, and bespoke enterprise software.</text>
+    <text x="32" y="158" font-family="{FONT_SANS}" font-size="13.8" fill="{muted}">We build single-database business operating systems, Arabic &amp; voice</text>
+    <text x="32" y="178" font-family="{FONT_SANS}" font-size="13.8" fill="{muted}">AI agents, indoor navigation platforms, and bespoke enterprise software.</text>
 
     {''.join(chip_svgs)}
   </g>
 
-  <rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="16" fill="none" stroke="{border}" stroke-width="1"/>
+  <rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="14" fill="none" stroke="{border}" stroke-width="1"/>
 </svg>
 """
     save_svg(ASSETS_DIR / f"org-hero-{mode}.svg", svg)
 
 
 # ---------------------------------------------------------------------------
-# 2. CTA BUTTONS (height=40)
+# 2. CLEAN CTA BUTTONS (height=38, calm, zero shimmer, uniform WhatsApp icon)
 # ---------------------------------------------------------------------------
-def build_action_button(filename, label, icon_markup, icon_mode="stroke", variant="secondary", width=184, mode="dark"):
-    H = 40
+def build_action_button(filename, label, icon_markup, icon_mode="stroke", variant="secondary", width=176, mode="dark"):
+    H = 38
     if variant == "primary":
-        bg1 = "#625AF2" if mode == "dark" else "#4F46E5"
-        bg2 = "#4D45DC" if mode == "dark" else "#4338CA"
-        border = "#837CF8" if mode == "dark" else "#3730A3"
+        bg1 = "#5A52EA" if mode == "dark" else "#4F46E5"
+        bg2 = "#4B43D6" if mode == "dark" else "#4338CA"
+        border = "#7B74F5" if mode == "dark" else "#3730A3"
         fg = "#FFFFFF"
         icon_color = "#FFFFFF"
-        sheen_op = "0.24"
     elif variant == "whatsapp":
-        bg1 = "#112E24" if mode == "dark" else "#E8F8F0"
-        bg2 = "#0E251D" if mode == "dark" else "#DCF4E8"
-        border = "#24664D" if mode == "dark" else "#9CDAB9"
-        fg = "#6EE7B7" if mode == "dark" else "#166549"
+        bg1 = "#0F241D" if mode == "dark" else "#ECFDF5"
+        bg2 = "#0C1D17" if mode == "dark" else "#D1FAE5"
+        border = "#1E5240" if mode == "dark" else "#A7F3D0"
+        fg = "#6EE7B7" if mode == "dark" else "#065F46"
         icon_color = "#25D366" if mode == "dark" else "#16A34A"
-        sheen_op = "0.10"
     else:
-        bg1 = "#191830" if mode == "dark" else "#FDFCFA"
-        bg2 = "#141326" if mode == "dark" else "#F4F1EA"
-        border = "#322E56" if mode == "dark" else "#DDD8CE"
-        fg = "#EEEBFF" if mode == "dark" else "#17162B"
-        icon_color = "#A296FA" if mode == "dark" else "#4338CA"
-        sheen_op = "0.10" if mode == "dark" else "0.80"
+        bg1 = "#141928" if mode == "dark" else "#FFFFFF"
+        bg2 = "#101420" if mode == "dark" else "#F8FAFC"
+        border = "#252D46" if mode == "dark" else "#E2E8F0"
+        fg = "#E2E8F0" if mode == "dark" else "#0F172A"
+        icon_color = "#818CF8" if mode == "dark" else "#4F46E5"
 
     text_w = len(label) * 7.4
-    group_w = 17 + 9 + text_w
+    group_w = 16 + 9 + text_w
     start_x = max(14, (width - group_w) / 2.0)
 
     if icon_mode == "custom":
-        icon_group = f'<g transform="translate({start_x:.1f}, 11.5) scale(0.71)">{icon_markup.format(color=icon_color)}</g>'
+        icon_group = f'<g transform="translate({start_x:.1f}, 10.5) scale(0.70)">{icon_markup.format(color=icon_color)}</g>'
     else:
-        icon_group = f'<g transform="translate({start_x:.1f}, 11.5) scale(0.71)" fill="none" stroke="{icon_color}" stroke-width="1.95" stroke-linecap="round" stroke-linejoin="round">{icon_markup}</g>'
-
-    shimmer_css = ""
-    shimmer_rect = ""
-    if variant == "primary":
-        shimmer_css = """
-        <style>
-          .shimmer { animation: sweep 6.5s ease-in-out infinite; }
-          @keyframes sweep {
-            0%, 62% { transform: translateX(-120px); opacity: 0; }
-            72% { opacity: 0.24; }
-            96% { transform: translateX(260px); opacity: 0; }
-            100% { transform: translateX(260px); opacity: 0; }
-          }
-          @media (prefers-reduced-motion: reduce) { .shimmer { animation: none !important; opacity: 0; } }
-        </style>
-        """
-        shimmer_rect = f'<polygon class="shimmer" points="0,0 38,0 18,{H} -20,{H}" fill="#FFFFFF" opacity="0"/>'
+        icon_group = f'<g transform="translate({start_x:.1f}, 10.5) scale(0.70)" fill="none" stroke="{icon_color}" stroke-width="1.95" stroke-linecap="round" stroke-linejoin="round">{icon_markup}</g>'
 
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{H}" viewBox="0 0 {width} {H}" role="img" aria-label="{escape(label)}">
   <defs>
-    {shimmer_css}
-    <linearGradient id="obtn_{filename}_{mode}" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="ob_{filename}_{mode}" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="{bg1}"/>
       <stop offset="100%" stop-color="{bg2}"/>
     </linearGradient>
-    <linearGradient id="obsheen_{filename}_{mode}" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="{sheen_op}"/>
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
-    </linearGradient>
-    <clipPath id="obclip_{filename}_{mode}">
-      <rect x="0.5" y="0.5" width="{width-1}" height="{H-1}" rx="10"/>
+    <clipPath id="obc_{filename}_{mode}">
+      <rect x="0.5" y="0.5" width="{width-1}" height="{H-1}" rx="9"/>
     </clipPath>
   </defs>
-  <g clip-path="url(#obclip_{filename}_{mode})">
-    <rect width="{width}" height="{H}" fill="url(#obtn_{filename}_{mode})"/>
-    <rect x="0" y="1" width="{width}" height="1" fill="url(#obsheen_{filename}_{mode})"/>
-    {shimmer_rect}
+  <g clip-path="url(#obc_{filename}_{mode})">
+    <rect width="{width}" height="{H}" fill="url(#ob_{filename}_{mode})"/>
     {icon_group}
-    <text x="{start_x + 25:.1f}" y="24.5" font-family="{FONT_SANS}" font-size="13" font-weight="600" fill="{fg}">{escape(label)}</text>
+    <text x="{start_x + 24:.1f}" y="23.5" font-family="{FONT_SANS}" font-size="13" font-weight="600" fill="{fg}">{escape(label)}</text>
   </g>
-  <rect x="0.5" y="0.5" width="{width-1}" height="{H-1}" rx="10" fill="none" stroke="{border}" stroke-width="1"/>
+  <rect x="0.5" y="0.5" width="{width-1}" height="{H-1}" rx="9" fill="none" stroke="{border}" stroke-width="1"/>
 </svg>
 """
     save_svg(ASSETS_DIR / f"{filename}-{mode}.svg", svg)
 
 
 # ---------------------------------------------------------------------------
-# 3. PRODUCT BENTO CARDS (414 x 192)
+# 3. 3-LAYER ENTERPRISE ARCHITECTURE DIAGRAM (840 x 332, >=12px type floor)
+#    Replaces redundant 4 cards + rainbow 12-grid + 9-sectors with ONE clean diagram
 # ---------------------------------------------------------------------------
-def build_product_card(filename, title, subtitle, line1, line2, tags, accent_dark, accent_light, icon_svg, micro_visual, mode="dark"):
-    W, H = 414, 192
+def build_org_architecture(mode="dark"):
+    W, H = 840, 344
     if mode == "dark":
-        bg1, bg2 = "#131227", "#181632"
-        border = "#2E2B50"
-        sheen_op = "0.10"
-        ink = "#F6F4FF"
-        muted = "#B7B3CE"
-        tag_bg = "#1E1C3A"
-        tag_border = "#35315E"
-        tag_fg = "#D6D1FF"
-        accent = accent_dark
-        icon_bg_op = "0.16"
-        arrow_bg = "#1E1C3A"
-        arrow_border = "#35315E"
-        arrow_fg = "#B7B3CE"
+        bg1, bg2 = "#0F131E", "#141928"
+        border = "#232B42"
+        sheen_op = "0.09"
+        accent = "#818CF8"
+        dot_live = "#34D399"
+        ink = "#F8FAFC"
+        muted = "#94A3B8"
+        layer_bg = "#13192A"
+        layer_border = "#232D47"
+        tile_bg = "#171F34"
+        tile_border = "#2A3656"
+        core_bg = "#141B30"
+        core_border = "#3E4A84"
+        connector = "#334155"
     else:
-        bg1, bg2 = "#FCFBF8", "#F4F1EA"
-        border = "#DDD8CE"
-        sheen_op = "0.85"
-        ink = "#17162B"
-        muted = "#524F66"
-        tag_bg = "#FFFFFF"
-        tag_border = "#DDD8CE"
-        tag_fg = "#35324A"
-        accent = accent_light
-        icon_bg_op = "0.11"
-        arrow_bg = "#FFFFFF"
-        arrow_border = "#DDD8CE"
-        arrow_fg = "#524F66"
-
-    tag_svgs = []
-    tx = 22
-    for t in tags:
-        tw = pill_width(t, min_w=46, char_w=6.8, pad=18)
-        tag_svgs.append(f"""
-        <rect x="{tx}" y="146" width="{tw}" height="26" rx="7" fill="{tag_bg}" stroke="{tag_border}" stroke-width="1"/>
-        <text x="{tx + tw/2:.1f}" y="163" text-anchor="middle" font-family="{FONT_SANS}" font-size="11" font-weight="500" fill="{tag_fg}">{escape(t)}</text>
-        """)
-        tx += tw + 7
-
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{escape(title)}">
-  <defs>
-    <linearGradient id="ocbg_{filename}_{mode}" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="{bg1}"/>
-      <stop offset="100%" stop-color="{bg2}"/>
-    </linearGradient>
-    <linearGradient id="octop_{filename}_{mode}" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="{accent}" stop-opacity="0"/>
-      <stop offset="22%" stop-color="{accent}" stop-opacity="0.9"/>
-      <stop offset="78%" stop-color="{accent}" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="{accent}" stop-opacity="0"/>
-    </linearGradient>
-    <radialGradient id="ocglow_{filename}_{mode}" cx="11%" cy="22%" r="36%">
-      <stop offset="0%" stop-color="{accent}" stop-opacity="{0.22 if mode == 'dark' else 0.11}"/>
-      <stop offset="100%" stop-color="{accent}" stop-opacity="0"/>
-    </radialGradient>
-    <clipPath id="occlip_{filename}_{mode}">
-      <rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="14"/>
-    </clipPath>
-  </defs>
-
-  <g clip-path="url(#occlip_{filename}_{mode})">
-    <rect width="{W}" height="{H}" fill="url(#ocbg_{filename}_{mode})"/>
-    <rect width="{W}" height="{H}" fill="url(#ocglow_{filename}_{mode})"/>
-    <rect x="0" y="0" width="{W}" height="2.5" fill="url(#octop_{filename}_{mode})"/>
-    <line x1="16" y1="2.5" x2="{W-16}" y2="2.5" stroke="#FFFFFF" stroke-opacity="{sheen_op}" stroke-width="1"/>
-
-    {micro_visual(accent, mode)}
-
-    <polygon points="{hex_points(42, 44, 20, True)}" fill="{accent}" fill-opacity="{icon_bg_op}" stroke="{accent}" stroke-opacity="0.5" stroke-width="1.2"/>
-    <g transform="translate(33, 35)" fill="none" stroke="{accent}" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-      {icon_svg}
-    </g>
-
-    <text x="74" y="40" font-family="{FONT_SANS}" font-size="16" font-weight="700" fill="{ink}">{escape(title)}</text>
-    <text x="74" y="58" font-family="{FONT_MONO}" font-size="10.2" font-weight="700" letter-spacing="0.5" fill="{accent}">{escape(subtitle)}</text>
-
-    <rect x="{W - 44}" y="22" width="24" height="24" rx="7" fill="{arrow_bg}" stroke="{arrow_border}" stroke-width="1"/>
-    <g transform="translate({W - 40}, 26)" fill="none" stroke="{arrow_fg}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M5 11L11 5M6 5h5v5"/>
-    </g>
-
-    <text x="22" y="98" font-family="{FONT_SANS}" font-size="12.6" fill="{muted}">{escape(line1)}</text>
-    <text x="22" y="118" font-family="{FONT_SANS}" font-size="12.6" fill="{muted}">{escape(line2)}</text>
-
-    {''.join(tag_svgs)}
-  </g>
-
-  <rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="14" fill="none" stroke="{border}" stroke-width="1"/>
-</svg>
-"""
-    save_svg(ASSETS_DIR / f"{filename}-{mode}.svg", svg)
-
-
-def micro_erp(accent, mode):
-    op = "0.28" if mode == "dark" else "0.18"
-    return f"""
-    <g transform="translate(332, 130)" opacity="0.88">
-      <rect x="0" y="22" width="9" height="18" rx="2.5" fill="{accent}" fill-opacity="{op}"><animate attributeName="opacity" values="0.5;1;0.5" dur="3.2s" begin="0s" repeatCount="indefinite"/></rect>
-      <rect x="14" y="14" width="9" height="26" rx="2.5" fill="{accent}" fill-opacity="{op}"><animate attributeName="opacity" values="0.5;1;0.5" dur="3.2s" begin="0.6s" repeatCount="indefinite"/></rect>
-      <rect x="28" y="18" width="9" height="22" rx="2.5" fill="{accent}" fill-opacity="{op}"><animate attributeName="opacity" values="0.5;1;0.5" dur="3.2s" begin="1.2s" repeatCount="indefinite"/></rect>
-      <rect x="42" y="4" width="9" height="36" rx="2.5" fill="{accent}" fill-opacity="0.58"><animate attributeName="opacity" values="0.65;1;0.65" dur="3.2s" begin="1.8s" repeatCount="indefinite"/></rect>
-    </g>"""
-
-
-def micro_ai(accent, mode):
-    op = "0.42" if mode == "dark" else "0.28"
-    return f"""
-    <g transform="translate(338, 132)">
-      <path d="M6 34 L28 6 L50 34 Z" fill="none" stroke="{accent}" stroke-opacity="{op}" stroke-width="1.2"/>
-      <circle cx="6" cy="34" r="3.2" fill="{accent}" fill-opacity="0.55"/>
-      <circle cx="28" cy="6" r="3.8" fill="{accent}" fill-opacity="0.88"/>
-      <circle cx="50" cy="34" r="3.2" fill="{accent}" fill-opacity="0.55"/>
-      <circle r="2.2" fill="{accent}"><animateMotion dur="3.8s" repeatCount="indefinite" path="M 6 34 L 28 6 L 50 34 L 6 34"/></circle>
-    </g>"""
-
-
-def micro_nav(accent, mode):
-    op = "0.35" if mode == "dark" else "0.24"
-    return f"""
-    <g transform="translate(320, 128)">
-      <rect x="0" y="4" width="72" height="40" rx="6" fill="none" stroke="{accent}" stroke-opacity="{op}" stroke-width="1"/>
-      <path d="M10 34 L26 34 L26 16 L50 16 L50 26 L62 26" fill="none" stroke="{accent}" stroke-opacity="0.65" stroke-width="1.5" stroke-dasharray="3 2.5"/>
-      <circle cx="10" cy="34" r="2.6" fill="{accent}" fill-opacity="0.5"/>
-      <circle cx="62" cy="26" r="3.0" fill="{accent}"/>
-      <circle r="2.4" fill="{accent}"><animateMotion dur="4.2s" repeatCount="indefinite" path="M 10 34 L 26 34 L 26 16 L 50 16 L 50 26 L 62 26"/></circle>
-    </g>"""
-
-
-def micro_custom(accent, mode):
-    op = "0.38" if mode == "dark" else "0.25"
-    return f"""
-    <g transform="translate(328, 138)">
-      <rect x="0" y="10" width="14" height="14" rx="3.5" fill="{accent}" fill-opacity="0.16" stroke="{accent}" stroke-opacity="{op}" stroke-width="1.1"/>
-      <rect x="24" y="10" width="14" height="14" rx="3.5" fill="{accent}" fill-opacity="0.22" stroke="{accent}" stroke-opacity="0.6" stroke-width="1.1"/>
-      <rect x="48" y="10" width="14" height="14" rx="3.5" fill="{accent}" fill-opacity="0.16" stroke="{accent}" stroke-opacity="{op}" stroke-width="1.1"/>
-      <line x1="14" y1="17" x2="24" y2="17" stroke="{accent}" stroke-opacity="{op}" stroke-width="1.2"/>
-      <line x1="38" y1="17" x2="48" y2="17" stroke="{accent}" stroke-opacity="{op}" stroke-width="1.2"/>
-      <circle r="2.1" fill="{accent}"><animateMotion dur="3.4s" repeatCount="indefinite" path="M 14 17 L 48 17"/></circle>
-    </g>"""
-
-
-# ---------------------------------------------------------------------------
-# 4. ENTERPRISE SECTORS MATRIX (840 x 192)
-# ---------------------------------------------------------------------------
-def build_sectors(mode="dark"):
-    W, H = 840, 192
-    if mode == "dark":
-        bg1, bg2 = "#131227", "#181632"
-        border = "#2E2B50"
-        sheen_op = "0.10"
-        header_fg = "#A296FA"
-        ink = "#F4F2FC"
-        muted = "#9B96B8"
-        tile_bg = "#1B1934"
-        tile_border = "#2E2B52"
-    else:
-        bg1, bg2 = "#FCFBF8", "#F4F1EA"
-        border = "#DDD8CE"
-        sheen_op = "0.85"
-        header_fg = "#4338CA"
-        ink = "#17162B"
-        muted = "#5D5A73"
+        bg1, bg2 = "#FFFFFF", "#F8FAFC"
+        border = "#E2E8F0"
+        sheen_op = "0.90"
+        accent = "#4F46E5"
+        dot_live = "#059669"
+        ink = "#0F172A"
+        muted = "#475569"
+        layer_bg = "#F8FAFC"
+        layer_border = "#E2E8F0"
         tile_bg = "#FFFFFF"
-        tile_border = "#E2DDD4"
+        tile_border = "#CBD5E1"
+        core_bg = "#EEF2FF"
+        core_border = "#A5B4FC"
+        connector = "#CBD5E1"
 
-    sectors = [
-        ("Retail & Store Chains", "#4FBF92" if mode == "dark" else "#166549"),
-        ("Wholesale & Distribution", "#60A5FA" if mode == "dark" else "#2563EB"),
-        ("Manufacturing & Production", "#A296FA" if mode == "dark" else "#4338CA"),
-        ("Contracting & Projects", "#F2A65A" if mode == "dark" else "#C2590C"),
-        ("Real Estate & Properties", "#C084FC" if mode == "dark" else "#7E22CE"),
-        ("Schools & Universities", "#38BDF8" if mode == "dark" else "#0284C7"),
-        ("Clinics & Healthcare", "#34D399" if mode == "dark" else "#059669"),
-        ("Jewellery & Luxury Retail", "#FBBF24" if mode == "dark" else "#B45309"),
-        ("Malls, Airports & Venues", "#818CF8" if mode == "dark" else "#4F46E5"),
+    # Layer 3: Industry Verticals (6 clean pills in 1 row or 3x2 — 3x2 gives big >=12.5px text!)
+    verticals = [
+        "Retail & Chains", "Wholesale & Distribution", "Manufacturing",
+        "Contracting & Real Estate", "Clinics & Schools", "Jewellery & Venues",
     ]
-
-    tiles = []
-    col_w = 256
-    gap_x = 12
-    row_h = 38
-    gap_y = 10
-    x0, y0 = 24, 48
-    for idx, (name, dot) in enumerate(sectors):
+    v_svgs = []
+    vw = 248
+    vg = 12
+    for idx, label in enumerate(verticals):
         col = idx % 3
         row = idx // 3
-        tx = x0 + col * (col_w + gap_x)
-        ty = y0 + row * (row_h + gap_y)
-        tiles.append(f"""
-        <rect x="{tx}" y="{ty}" width="{col_w}" height="{row_h}" rx="9" fill="{tile_bg}" stroke="{tile_border}" stroke-width="1"/>
-        <polygon points="{hex_points(tx + 20, ty + 19, 6.5, True)}" fill="{dot}" fill-opacity="0.22" stroke="{dot}" stroke-width="1.2"/>
-        <circle cx="{tx + 20}" cy="{ty + 19}" r="2" fill="{dot}"/>
-        <text x="{tx + 36}" y="{ty + 23.2}" font-family="{FONT_SANS}" font-size="12.5" font-weight="500" fill="{ink}">{escape(name)}</text>
+        vx = 36 + col * (vw + vg)
+        vy = 70 + row * 32
+        v_svgs.append(f"""
+        <rect x="{vx}" y="{vy}" width="{vw}" height="26" rx="6" fill="{tile_bg}" stroke="{tile_border}" stroke-width="1"/>
+        <circle cx="{vx + 13}" cy="{vy + 13}" r="2.6" fill="{accent}"/>
+        <text x="{vx + 25}" y="{vy + 17}" font-family="{FONT_SANS}" font-size="12" font-weight="500" fill="{ink}">{escape(label)}</text>
         """)
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Industries and Enterprise Sectors Served by Qodra Systems">
+    # Layer 2: 6 Core Unified Qodra OS Modules (3x2 grid — spacious, zero collision!)
+    modules = [
+        ("ERP & Accounting", "Ledger · e-Invoice"),
+        ("Sales & POS", "Cashier · Branches"),
+        ("Inventory & WMS", "Stock · Batches"),
+        ("Purchasing & SCM", "Suppliers · RFQs"),
+        ("HR & Payroll", "Shifts · Bank WPS"),
+        ("CRM & Store", "Loyalty · Online"),
+    ]
+    m_svgs = []
+    for idx, (title, sub) in enumerate(modules):
+        col = idx % 3
+        row = idx // 3
+        mx = 36 + col * (vw + vg)
+        my = 172 + row * 32
+        m_svgs.append(f"""
+        <rect x="{mx}" y="{my}" width="{vw}" height="26" rx="6" fill="{tile_bg}" stroke="{tile_border}" stroke-width="1"/>
+        <text x="{mx + 12}" y="{my + 17}" font-family="{FONT_SANS}" font-size="12" font-weight="700" fill="{ink}">{escape(title)}</text>
+        <text x="{mx + vw - 10}" y="{my + 16.5}" text-anchor="end" font-family="{FONT_MONO}" font-size="9.2" fill="{muted}">{escape(sub)}</text>
+        """)
+
+    # Layer 1: 3 Foundational Engines (Core Database + Awni AI + Indoor Nav & Custom APIs)
+    foundations = [
+        ("Single PostgreSQL Core", "1 POS sale syncs stock, ledger & e-invoice", dot_live),
+        ("Awni Governed AI Agents", "Arabic & voice · RBAC · human approval", accent),
+        ("Indoor Nav & Custom APIs", "GPS-free wayfinding · Flutter · cloud", accent),
+    ]
+    f_svgs = []
+    for idx, (title, sub, dot) in enumerate(foundations):
+        fx = 36 + idx * (vw + vg)
+        fy = 274
+        f_svgs.append(f"""
+        <rect x="{fx}" y="{fy}" width="{vw}" height="46" rx="8" fill="{core_bg}" stroke="{core_border}" stroke-width="1"/>
+        <circle cx="{fx + 14}" cy="{fy + 17}" r="3.2" fill="{dot}"/>
+        <text x="{fx + 25}" y="{fy + 21}" font-family="{FONT_SANS}" font-size="12.2" font-weight="700" fill="{ink}">{escape(title)}</text>
+        <text x="{fx + 14}" y="{fy + 37}" font-family="{FONT_SANS}" font-size="10.8" fill="{muted}">{escape(sub)}</text>
+        """)
+
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Qodra Systems 3-Layer Enterprise Architecture">
   <defs>
-    <linearGradient id="sec_bg_{mode}" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="abg_{mode}" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="{bg1}"/>
       <stop offset="100%" stop-color="{bg2}"/>
     </linearGradient>
-    <clipPath id="sec_clip_{mode}">
+    <clipPath id="aclip_{mode}">
       <rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="14"/>
     </clipPath>
   </defs>
-  <g clip-path="url(#sec_clip_{mode})">
-    <rect width="{W}" height="{H}" fill="url(#sec_bg_{mode})"/>
+
+  <g clip-path="url(#aclip_{mode})">
+    <rect width="{W}" height="{H}" fill="url(#abg_{mode})"/>
     <line x1="20" y1="1.5" x2="{W-20}" y2="1.5" stroke="#FFFFFF" stroke-opacity="{sheen_op}" stroke-width="1"/>
-    <text x="26" y="30" font-family="{FONT_MONO}" font-size="11" font-weight="700" letter-spacing="1.1" fill="{header_fg}">INDUSTRIES &amp; SECTOR SYSTEMS</text>
-    <text x="{W - 26}" y="30" text-anchor="end" font-family="{FONT_MONO}" font-size="9.5" font-weight="600" letter-spacing="0.6" fill="{muted}">BUILT FOR MENA ENTERPRISES</text>
-    {''.join(tiles)}
+
+    <text x="26" y="30" font-family="{FONT_MONO}" font-size="11" font-weight="700" letter-spacing="1.0" fill="{accent}">QODRA SYSTEMS  ·  3-LAYER ENTERPRISE ARCHITECTURE</text>
+    <circle cx="628" cy="26.5" r="3.2" fill="{dot_live}"/>
+    <text x="814" y="30" text-anchor="end" font-family="{FONT_MONO}" font-size="9.8" font-weight="600" letter-spacing="0.4" fill="{muted}">UNIFIED REAL-TIME PLATFORM</text>
+
+    <!-- Layer 3 Container -->
+    <rect x="24" y="46" width="{W-48}" height="90" rx="10" fill="{layer_bg}" stroke="{layer_border}" stroke-width="1"/>
+    <text x="36" y="62" font-family="{FONT_MONO}" font-size="9.8" font-weight="700" letter-spacing="0.8" fill="{muted}">03 · INDUSTRY VERTICALS &amp; SPECIALIZED SECTORS</text>
+    {''.join(v_svgs)}
+
+    <!-- Vertical connectors L3 -> L2 -->
+    <line x1="160" y1="136" x2="160" y2="148" stroke="{connector}" stroke-width="1.4" stroke-dasharray="2 2"/>
+    <line x1="420" y1="136" x2="420" y2="148" stroke="{connector}" stroke-width="1.4" stroke-dasharray="2 2"/>
+    <line x1="680" y1="136" x2="680" y2="148" stroke="{connector}" stroke-width="1.4" stroke-dasharray="2 2"/>
+
+    <!-- Layer 2 Container -->
+    <rect x="24" y="148" width="{W-48}" height="90" rx="10" fill="{layer_bg}" stroke="{layer_border}" stroke-width="1"/>
+    <text x="36" y="164" font-family="{FONT_MONO}" font-size="9.8" font-weight="700" letter-spacing="0.8" fill="{muted}">02 · QODRA OS UNIFIED OPERATIONAL MODULES</text>
+    {''.join(m_svgs)}
+
+    <!-- Vertical connectors L2 -> L1 -->
+    <line x1="160" y1="238" x2="160" y2="250" stroke="{accent}" stroke-opacity="0.65" stroke-width="1.4" stroke-dasharray="2 2"/>
+    <line x1="420" y1="238" x2="420" y2="250" stroke="{accent}" stroke-opacity="0.65" stroke-width="1.4" stroke-dasharray="2 2"/>
+    <line x1="680" y1="238" x2="680" y2="250" stroke="{accent}" stroke-opacity="0.65" stroke-width="1.4" stroke-dasharray="2 2"/>
+
+    <!-- Layer 1 Container -->
+    <rect x="24" y="250" width="{W-48}" height="80" rx="10" fill="{layer_bg}" stroke="{accent}" stroke-opacity="0.45" stroke-width="1"/>
+    <text x="36" y="265.5" font-family="{FONT_MONO}" font-size="9.6" font-weight="700" letter-spacing="0.8" fill="{accent}">01 · FOUNDATION, REAL-TIME DATA &amp; AI RUNTIME</text>
+    {''.join(f_svgs)}
   </g>
+
   <rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="14" fill="none" stroke="{border}" stroke-width="1"/>
 </svg>
 """
-    save_svg(ASSETS_DIR / f"org-sectors-{mode}.svg", svg)
-
-
-# ---------------------------------------------------------------------------
-# 5. COMPANY TECHNOLOGY STACK & ENGINEERING PILLARS (840 x 288)
-# ---------------------------------------------------------------------------
-def build_org_stack(mode="dark"):
-    W, H = 840, 288
-    if mode == "dark":
-        bg1, bg2 = "#131227", "#181632"
-        border = "#2E2B50"
-        sheen_op = "0.10"
-        header_fg = "#A296FA"
-        label_fg = "#F4F2FC"
-        muted = "#9B96B8"
-        row_line = "#252242"
-        pri_bg = "#221F44"
-        pri_border = "#484284"
-        pri_fg = "#F4F2FC"
-        sec_bg = "#191730"
-        sec_border = "#2D2A4E"
-        sec_fg = "#B7B3CE"
-        tenet_num = "#A296FA"
-    else:
-        bg1, bg2 = "#FCFBF8", "#F4F1EA"
-        border = "#DDD8CE"
-        sheen_op = "0.85"
-        header_fg = "#4338CA"
-        label_fg = "#17162B"
-        muted = "#5D5A73"
-        row_line = "#E6E1D8"
-        pri_bg = "#FFFFFF"
-        pri_border = "#B8B2EE"
-        pri_fg = "#1E1B4B"
-        sec_bg = "#F4F1EA"
-        sec_border = "#DDD8CE"
-        sec_fg = "#4D4A61"
-        tenet_num = "#4338CA"
-
-    rows = [
-        ("Mobile & Web", "#60A5FA" if mode == "dark" else "#2563EB",
-         [("Flutter", True), ("TypeScript", True), ("React", False), ("Next.js", False), ("Vue.js", False), ("Swift", False), ("Kotlin", False)]),
-        ("Backend & Data", "#4FBF92" if mode == "dark" else "#166549",
-         [("PostgreSQL", True), ("PL/pgSQL", True), ("Node.js", False), ("Python", False), ("Go", False), (".NET", False), ("Redis", False)]),
-        ("Multi-Model AI", "#A296FA" if mode == "dark" else "#4338CA",
-         [("Awni Agents", True), ("Arabic & Voice", True), ("OpenAI", False), ("Claude", False), ("Gemini", False), ("Llama", False)]),
-        ("Cloud & Infra", "#F2A65A" if mode == "dark" else "#C2590C",
-         [("AWS", True), ("Google Cloud", True), ("Azure", False), ("Supabase", False), ("Firebase", False), ("Docker", False)]),
-    ]
-
-    row_svgs = []
-    y0 = 54
-    row_h = 39
-    for idx, (cat, dot, items) in enumerate(rows):
-        y = y0 + idx * row_h
-        if idx > 0:
-            row_svgs.append(f'<line x1="24" y1="{y - 11}" x2="{W - 24}" y2="{y - 11}" stroke="{row_line}" stroke-width="1"/>')
-        row_svgs.append(f'<circle cx="32" cy="{y + 8}" r="4" fill="{dot}"/>')
-        row_svgs.append(f'<text x="46" y="{y + 12.2}" font-family="{FONT_SANS}" font-size="12.8" font-weight="600" fill="{label_fg}">{escape(cat)}</text>')
-
-        cx = 178
-        for label, is_pri in items:
-            w = pill_width(label, min_w=54, char_w=7.4, pad=26 if is_pri else 22)
-            p_bg = pri_bg if is_pri else sec_bg
-            p_bd = pri_border if is_pri else sec_border
-            p_fg = pri_fg if is_pri else sec_fg
-            fw = "600" if is_pri else "500"
-            dot_mark = f'<circle cx="{cx + 10}" cy="{y + 8}" r="2.3" fill="{dot}"/>' if is_pri else ""
-            tx = cx + w / 2.0 + (4 if is_pri else 0)
-            row_svgs.append(f"""
-            <rect x="{cx}" y="{y - 5}" width="{w}" height="26" rx="7" fill="{p_bg}" stroke="{p_bd}" stroke-width="1"/>
-            {dot_mark}
-            <text x="{tx:.1f}" y="{y + 12}" text-anchor="middle" font-family="{FONT_SANS}" font-size="11.5" font-weight="{fw}" fill="{p_fg}">{escape(label)}</text>
-            """)
-            cx += w + 8
-
-    tenets = [
-        ("01 · SINGLE DATABASE CORE", "One POS sale updates stock, ledger,", "e-invoicing & dashboards in real time."),
-        ("02 · GOVERNED ENTERPRISE AI", "Agents execute inside role permissions", "with audit trails & human approval."),
-        ("03 · SECURITY & COMPLIANCE", "Regional e-invoicing, bank payroll", "files, and multi-branch governance."),
-    ]
-    tenet_svgs = [f'<line x1="24" y1="210" x2="{W - 24}" y2="210" stroke="{row_line}" stroke-width="1"/>']
-    col_w = (W - 48) / 3.0
-    for idx, (head, l1, l2) in enumerate(tenets):
-        tx = 26 + idx * col_w
-        if idx > 0:
-            tenet_svgs.append(f'<line x1="{tx - 10:.1f}" y1="222" x2="{tx - 10:.1f}" y2="274" stroke="{row_line}" stroke-width="1"/>')
-        tenet_svgs.append(f"""
-        <text x="{tx:.1f}" y="233" font-family="{FONT_MONO}" font-size="10.2" font-weight="700" letter-spacing="0.8" fill="{tenet_num}">{escape(head)}</text>
-        <text x="{tx:.1f}" y="252" font-family="{FONT_SANS}" font-size="11.6" fill="{muted}">{escape(l1)}</text>
-        <text x="{tx:.1f}" y="268" font-family="{FONT_SANS}" font-size="11.6" fill="{muted}">{escape(l2)}</text>
-        """)
-
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Qodra Systems Technology Stack and Engineering Standards">
-  <defs>
-    <linearGradient id="ost_bg_{mode}" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="{bg1}"/>
-      <stop offset="100%" stop-color="{bg2}"/>
-    </linearGradient>
-    <clipPath id="ost_clip_{mode}">
-      <rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="14"/>
-    </clipPath>
-  </defs>
-  <g clip-path="url(#ost_clip_{mode})">
-    <rect width="{W}" height="{H}" fill="url(#ost_bg_{mode})"/>
-    <line x1="20" y1="1.5" x2="{W-20}" y2="1.5" stroke="#FFFFFF" stroke-opacity="{sheen_op}" stroke-width="1"/>
-    <text x="26" y="30" font-family="{FONT_MONO}" font-size="11" font-weight="700" letter-spacing="1.1" fill="{header_fg}">ENGINEERING STACK &amp; PLATFORM STANDARDS</text>
-    <text x="{W - 26}" y="30" text-anchor="end" font-family="{FONT_MONO}" font-size="9.5" font-weight="600" letter-spacing="0.6" fill="{muted}">PRODUCTION ARCHITECTURE</text>
-    {''.join(row_svgs)}
-    {''.join(tenet_svgs)}
-  </g>
-  <rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="14" fill="none" stroke="{border}" stroke-width="1"/>
-</svg>
-"""
-    save_svg(ASSETS_DIR / f"org-stack-{mode}.svg", svg)
+    save_svg(ASSETS_DIR / f"org-architecture-{mode}.svg", svg)
 
 
 ICON_LAYERS = '<path d="M12 2.5L2.5 7.5 12 12.5 21.5 7.5 12 2.5z"/><path d="M2.5 12.5L12 17.5 21.5 12.5"/><path d="M2.5 17.5L12 22.5 21.5 17.5"/>'
@@ -700,52 +453,13 @@ ICON_WHATSAPP = (
 def main():
     for mode in ("dark", "light"):
         build_org_hero(mode)
-        build_sectors(mode)
-        build_org_stack(mode)
+        build_org_architecture(mode)
+        build_action_button("btn-systems", "Explore Systems", ICON_LAYERS, variant="primary", width=180, mode=mode)
+        build_action_button("btn-web", "qodrasystems.com", ICON_GLOBE, variant="secondary", width=188, mode=mode)
+        build_action_button("btn-contact", "Contact Sales", ICON_EMAIL, variant="secondary", width=158, mode=mode)
+        build_action_button("btn-whatsapp", "WhatsApp", ICON_WHATSAPP, icon_mode="custom", variant="whatsapp", width=148, mode=mode)
 
-        build_action_button("btn-systems", "Explore Systems", ICON_LAYERS, variant="primary", width=184, mode=mode)
-        build_action_button("btn-web", "qodrasystems.com", ICON_GLOBE, variant="secondary", width=192, mode=mode)
-        build_action_button("btn-contact", "Contact Us", ICON_EMAIL, variant="secondary", width=152, mode=mode)
-        build_action_button("btn-whatsapp", "WhatsApp", ICON_WHATSAPP, icon_mode="custom", variant="whatsapp", width=152, mode=mode)
-
-        build_product_card(
-            "card-erp", "Qodra OS", "UNIFIED ERP · E-INVOICING",
-            "Accounting, POS, inventory, purchasing, HR & sector modules",
-            "on a single real-time database with e-invoicing built in.",
-            ["ERP", "Finance & POS", "Multi-Branch"],
-            "#4FBF92", "#166549",
-            '<path d="M9 1L2 5v8l7 4 7-4V5L9 1z"/><path d="M2 5l7 4 7-4M9 9v8"/>',
-            micro_erp, mode=mode,
-        )
-        build_product_card(
-            "card-ai", "Awni & AI Agents", "PERMISSION-AWARE AI",
-            "Arabic & voice AI agents that work inside company systems",
-            "within role permissions, audit trails, and team approval.",
-            ["AI Agents", "Arabic & Voice", "Enterprise"],
-            "#A296FA", "#4338CA",
-            '<path d="M9 1.5l1.8 4.7 4.7 1.8-4.7 1.8L9 14.5l-1.8-4.7L2.5 8l4.7-1.8L9 1.5z"/>',
-            micro_ai, mode=mode,
-        )
-        build_product_card(
-            "card-nav", "Indoor Navigation", "GPS-FREE WAYFINDING",
-            "Cross-floor visitor guidance app and live admin console",
-            "built for malls, airports, hospitals, campuses & museums.",
-            ["Cross-Floor", "Heatmaps", "Venues"],
-            "#C084FC", "#6D28D9",
-            '<path d="M9 16s5.5-4.8 5.5-9A5.5 5.5 0 1 0 3.5 7c0 4.2 5.5 9 5.5 9z"/><circle cx="9" cy="7" r="2"/>',
-            micro_nav, mode=mode,
-        )
-        build_product_card(
-            "card-custom", "Custom Systems & Apps", "BESPOKE PLATFORMS",
-            "Tailored operational software, Flutter & web platforms,",
-            "customer/supplier portals, and scalable cloud integrations.",
-            ["Mobile & Web", "APIs & Cloud", "Custom"],
-            "#60A5FA", "#1D4ED8",
-            '<path d="M5.5 5L1.5 9l4 4M12.5 5l4 4-4 4M10.5 3l-3 12"/>',
-            micro_custom, mode=mode,
-        )
-
-    print("Qodra Systems Organization SVG assets generated & validated in", ASSETS_DIR)
+    print("v3 Qodra Systems Organization SVG assets generated & XML-validated!")
 
 
 if __name__ == "__main__":
