@@ -1,17 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="188" height="38" viewBox="0 0 188 38" role="img" aria-label="qodrasystems.com">
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="38" viewBox="0 0 180 38" role="img" aria-label="qodrasystems.com">
   <defs>
     <linearGradient id="ob_btn-web_light" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#FFFFFF"/>
       <stop offset="100%" stop-color="#F8FAFC"/>
     </linearGradient>
     <clipPath id="obc_btn-web_light">
-      <rect x="0.5" y="0.5" width="187" height="37" rx="9"/>
+      <rect x="0.5" y="0.5" width="179" height="37" rx="9"/>
     </clipPath>
   </defs>
   <g clip-path="url(#obc_btn-web_light)">
-    <rect width="188" height="38" fill="url(#ob_btn-web_light)"/>
-    <g transform="translate(22.3, 10.5) scale(0.70)" fill="none" stroke="#4F46E5" stroke-width="1.95" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/><path d="M12 2.5a14.5 14.5 0 0 1 0 19 14.5 14.5 0 0 1 0-19Z"/></g>
-    <text x="46.3" y="23.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F172A">qodrasystems.com</text>
+    <rect width="180" height="38" fill="url(#ob_btn-web_light)"/>
+    <g transform="translate(18.3, 10.5) scale(0.70)" fill="none" stroke="#4F46E5" stroke-width="1.95" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/><path d="M12 2.5a14.5 14.5 0 0 1 0 19 14.5 14.5 0 0 1 0-19Z"/></g>
+    <text x="42.3" y="23.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F172A">qodrasystems.com</text>
   </g>
-  <rect x="0.5" y="0.5" width="187" height="37" rx="9" fill="none" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="0.5" y="0.5" width="179" height="37" rx="9" fill="none" stroke="#E2E8F0" stroke-width="1"/>
 </svg>

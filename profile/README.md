@@ -11,10 +11,11 @@
 <br>
 
 <p align="center">
-  <a href="https://qodrasystems.com/en/systems.html" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/btn-systems-dark.svg?v=3"><source media="(prefers-color-scheme: light)" srcset="./assets/btn-systems-light.svg?v=3"><img alt="Explore Qodra Systems" src="./assets/btn-systems-dark.svg?v=3" height="38"></picture></a>&nbsp;
-  <a href="https://qodrasystems.com/en/" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/btn-web-dark.svg?v=3"><source media="(prefers-color-scheme: light)" srcset="./assets/btn-web-light.svg?v=3"><img alt="qodrasystems.com" src="./assets/btn-web-dark.svg?v=3" height="38"></picture></a>&nbsp;
-  <a href="mailto:info@qodrasystems.com"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/btn-contact-dark.svg?v=3"><source media="(prefers-color-scheme: light)" srcset="./assets/btn-contact-light.svg?v=3"><img alt="Contact Sales" src="./assets/btn-contact-dark.svg?v=3" height="38"></picture></a>&nbsp;
-  <a href="https://wa.me/962785453603" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/btn-whatsapp-dark.svg?v=3"><source media="(prefers-color-scheme: light)" srcset="./assets/btn-whatsapp-light.svg?v=3"><img alt="WhatsApp Qodra Systems" src="./assets/btn-whatsapp-dark.svg?v=3" height="38"></picture></a>
+  <a href="https://qodrasystems.com/en/systems.html" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/btn-systems-dark.svg?v=4"><source media="(prefers-color-scheme: light)" srcset="./assets/btn-systems-light.svg?v=4"><img alt="Explore Qodra Systems" src="./assets/btn-systems-dark.svg?v=4" height="38"></picture></a>&nbsp;
+  <a href="https://qodrasystems.com/en/" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/btn-web-dark.svg?v=4"><source media="(prefers-color-scheme: light)" srcset="./assets/btn-web-light.svg?v=4"><img alt="qodrasystems.com" src="./assets/btn-web-dark.svg?v=4" height="38"></picture></a>&nbsp;
+  <a href="https://www.linkedin.com/company/qodrasystems" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/btn-linkedin-dark.svg?v=4"><source media="(prefers-color-scheme: light)" srcset="./assets/btn-linkedin-light.svg?v=4"><img alt="Qodra Systems on LinkedIn" src="./assets/btn-linkedin-dark.svg?v=4" height="38"></picture></a>&nbsp;
+  <a href="mailto:info@qodrasystems.com"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/btn-contact-dark.svg?v=4"><source media="(prefers-color-scheme: light)" srcset="./assets/btn-contact-light.svg?v=4"><img alt="Contact Sales" src="./assets/btn-contact-dark.svg?v=4" height="38"></picture></a>&nbsp;
+  <a href="https://wa.me/962785453603" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/btn-whatsapp-dark.svg?v=4"><source media="(prefers-color-scheme: light)" srcset="./assets/btn-whatsapp-light.svg?v=4"><img alt="WhatsApp Qodra Systems" src="./assets/btn-whatsapp-dark.svg?v=4" height="38"></picture></a>
 </p>
 
 </div>
@@ -68,6 +69,8 @@
     <a href="https://qodrasystems.com/">الموقع العربي</a>
     &nbsp;·&nbsp;
     <a href="https://qodrasystems.com/en/systems.html">Systems &amp; Services</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.linkedin.com/company/qodrasystems">LinkedIn</a>
     &nbsp;·&nbsp;
     <a href="https://www.instagram.com/qodrasystems/">Instagram</a>
     &nbsp;·&nbsp;
