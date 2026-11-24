@@ -1,14 +1,12 @@
-<div align="center">
-
-<a href="https://qodrasystems.com/en/" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/org-hero-dark.svg?v=3">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/org-hero-light.svg?v=3">
-    <img alt="Qodra Systems — Enterprise Operating Systems, AI Agents, and Custom Software" src="./assets/org-hero-dark.svg?v=3" width="100%">
-  </picture>
-</a>
-
-<br>
+<p align="center">
+  <a href="https://qodrasystems.com/en/" target="_blank">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./assets/org-hero-dark.svg?v=3">
+      <source media="(prefers-color-scheme: light)" srcset="./assets/org-hero-light.svg?v=3">
+      <img alt="Qodra Systems — Enterprise Operating Systems, AI Agents, and Custom Software" src="./assets/org-hero-dark.svg?v=3" width="100%">
+    </picture>
+  </a>
+</p>
 
 <p align="center">
   <a href="https://qodrasystems.com/en/systems.html" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/btn-systems-dark.svg?v=4"><source media="(prefers-color-scheme: light)" srcset="./assets/btn-systems-light.svg?v=4"><img alt="Explore Qodra Systems" src="./assets/btn-systems-dark.svg?v=4" height="38"></picture></a>&nbsp;
@@ -17,8 +15,6 @@
   <a href="mailto:info@qodrasystems.com"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/btn-contact-dark.svg?v=4"><source media="(prefers-color-scheme: light)" srcset="./assets/btn-contact-light.svg?v=4"><img alt="Contact Sales" src="./assets/btn-contact-dark.svg?v=4" height="38"></picture></a>&nbsp;
   <a href="https://wa.me/962785453603" target="_blank"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/btn-whatsapp-dark.svg?v=4"><source media="(prefers-color-scheme: light)" srcset="./assets/btn-whatsapp-light.svg?v=4"><img alt="WhatsApp Qodra Systems" src="./assets/btn-whatsapp-dark.svg?v=4" height="38"></picture></a>
 </p>
-
-</div>
 
 ---
 
