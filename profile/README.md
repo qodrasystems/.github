@@ -58,7 +58,7 @@
 
 <p align="center" dir="ltr">
   <sub>
-    Led by <a href="https://github.com/AboodAyyash"><strong>@AboodAyyash</strong></a> (Founder &amp; CEO)
+    Led by <a href="https://github.com/AboodAyyash"><strong>@AboodAyyash</strong></a> (CEO)
     &nbsp;·&nbsp;
     <a href="https://qodrasystems.com/en/">Website (EN)</a>
     &nbsp;·&nbsp;
