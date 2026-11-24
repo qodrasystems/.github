@@ -51,15 +51,17 @@
   </picture>
 </p>
 
-<div align="center">
+<p align="center" dir="rtl">
+  <sub><strong>شركة قدرة للأنظمة</strong> — نطوّر أنظمة إدارة الشركات، وتطبيقات الموبايل والويب، والبرمجيات الخاصة، والذكاء الاصطناعي · عمّان، المملكة الأردنية الهاشمية</sub>
+</p>
+
+<p align="center" dir="ltr">
   <sub>
-    <strong>شركة قدرة للأنظمة</strong> — نطوّر أنظمة إدارة الشركات، وتطبيقات الموبايل والويب، والبرمجيات الخاصة، والذكاء الاصطناعي · عمّان، المملكة الأردنية الهاشمية
-    <br><br>
     Led by <a href="https://github.com/AboodAyyash"><strong>@AboodAyyash</strong></a> (CEO)
     &nbsp;·&nbsp;
-    <a href="https://qodrasystems.com/">الموقع العربي</a>
+    <a href="https://qodrasystems.com/en/">Website (EN)</a>
     &nbsp;·&nbsp;
-    <a href="https://qodrasystems.com/en/">English Website</a>
+    <a href="https://qodrasystems.com/">Website (AR)</a>
     &nbsp;·&nbsp;
     <a href="https://www.instagram.com/qodrasystems/">Instagram</a>
     &nbsp;·&nbsp;
@@ -67,4 +69,4 @@
     &nbsp;·&nbsp;
     <a href="https://www.facebook.com/profile.php?id=61595853512325">Facebook</a>
   </sub>
-</div>
+</p>
