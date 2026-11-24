@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="192" viewBox="0 0 840 192" role="img" aria-label="Industries and Enterprise Sectors Served by Qodra Systems">
+  <defs>
+    <linearGradient id="sec_bg_light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCFBF8"/>
+      <stop offset="100%" stop-color="#F4F1EA"/>
+    </linearGradient>
+    <clipPath id="sec_clip_light">
+      <rect x="0.5" y="0.5" width="839" height="191" rx="14"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#sec_clip_light)">
+    <rect width="840" height="192" fill="url(#sec_bg_light)"/>
+    <line x1="20" y1="1.5" x2="820" y2="1.5" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1"/>
+    <text x="26" y="30" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="11" font-weight="700" letter-spacing="1.1" fill="#4338CA">INDUSTRIES &amp; SECTOR SYSTEMS</text>
+    <text x="814" y="30" text-anchor="end" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="9.5" font-weight="600" letter-spacing="0.6" fill="#5D5A73">BUILT FOR MENA ENTERPRISES</text>
+    
+        <rect x="24" y="48" width="256" height="38" rx="9" fill="#FFFFFF" stroke="#E2DDD4" stroke-width="1"/>
+        <polygon points="50.50,67.00 47.25,72.63 40.75,72.63 37.50,67.00 40.75,61.37 47.25,61.37" fill="#166549" fill-opacity="0.22" stroke="#166549" stroke-width="1.2"/>
+        <circle cx="44" cy="67" r="2" fill="#166549"/>
+        <text x="60" y="71.2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#17162B">Retail &amp; Store Chains</text>
+        
+        <rect x="292" y="48" width="256" height="38" rx="9" fill="#FFFFFF" stroke="#E2DDD4" stroke-width="1"/>
+        <polygon points="318.50,67.00 315.25,72.63 308.75,72.63 305.50,67.00 308.75,61.37 315.25,61.37" fill="#2563EB" fill-opacity="0.22" stroke="#2563EB" stroke-width="1.2"/>
+        <circle cx="312" cy="67" r="2" fill="#2563EB"/>
+        <text x="328" y="71.2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#17162B">Wholesale &amp; Distribution</text>
+        
+        <rect x="560" y="48" width="256" height="38" rx="9" fill="#FFFFFF" stroke="#E2DDD4" stroke-width="1"/>
+        <polygon points="586.50,67.00 583.25,72.63 576.75,72.63 573.50,67.00 576.75,61.37 583.25,61.37" fill="#4338CA" fill-opacity="0.22" stroke="#4338CA" stroke-width="1.2"/>
+        <circle cx="580" cy="67" r="2" fill="#4338CA"/>
+        <text x="596" y="71.2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#17162B">Manufacturing &amp; Production</text>
+        
+        <rect x="24" y="96" width="256" height="38" rx="9" fill="#FFFFFF" stroke="#E2DDD4" stroke-width="1"/>
+        <polygon points="50.50,115.00 47.25,120.63 40.75,120.63 37.50,115.00 40.75,109.37 47.25,109.37" fill="#C2590C" fill-opacity="0.22" stroke="#C2590C" stroke-width="1.2"/>
+        <circle cx="44" cy="115" r="2" fill="#C2590C"/>
+        <text x="60" y="119.2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#17162B">Contracting &amp; Projects</text>
+        
+        <rect x="292" y="96" width="256" height="38" rx="9" fill="#FFFFFF" stroke="#E2DDD4" stroke-width="1"/>
+        <polygon points="318.50,115.00 315.25,120.63 308.75,120.63 305.50,115.00 308.75,109.37 315.25,109.37" fill="#7E22CE" fill-opacity="0.22" stroke="#7E22CE" stroke-width="1.2"/>
+        <circle cx="312" cy="115" r="2" fill="#7E22CE"/>
+        <text x="328" y="119.2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#17162B">Real Estate &amp; Properties</text>
+        
+        <rect x="560" y="96" width="256" height="38" rx="9" fill="#FFFFFF" stroke="#E2DDD4" stroke-width="1"/>
+        <polygon points="586.50,115.00 583.25,120.63 576.75,120.63 573.50,115.00 576.75,109.37 583.25,109.37" fill="#0284C7" fill-opacity="0.22" stroke="#0284C7" stroke-width="1.2"/>
+        <circle cx="580" cy="115" r="2" fill="#0284C7"/>
+        <text x="596" y="119.2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#17162B">Schools &amp; Universities</text>
+        
+        <rect x="24" y="144" width="256" height="38" rx="9" fill="#FFFFFF" stroke="#E2DDD4" stroke-width="1"/>
+        <polygon points="50.50,163.00 47.25,168.63 40.75,168.63 37.50,163.00 40.75,157.37 47.25,157.37" fill="#059669" fill-opacity="0.22" stroke="#059669" stroke-width="1.2"/>
+        <circle cx="44" cy="163" r="2" fill="#059669"/>
+        <text x="60" y="167.2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#17162B">Clinics &amp; Healthcare</text>
+        
+        <rect x="292" y="144" width="256" height="38" rx="9" fill="#FFFFFF" stroke="#E2DDD4" stroke-width="1"/>
+        <polygon points="318.50,163.00 315.25,168.63 308.75,168.63 305.50,163.00 308.75,157.37 315.25,157.37" fill="#B45309" fill-opacity="0.22" stroke="#B45309" stroke-width="1.2"/>
+        <circle cx="312" cy="163" r="2" fill="#B45309"/>
+        <text x="328" y="167.2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#17162B">Jewellery &amp; Luxury Retail</text>
+        
+        <rect x="560" y="144" width="256" height="38" rx="9" fill="#FFFFFF" stroke="#E2DDD4" stroke-width="1"/>
+        <polygon points="586.50,163.00 583.25,168.63 576.75,168.63 573.50,163.00 576.75,157.37 583.25,157.37" fill="#4F46E5" fill-opacity="0.22" stroke="#4F46E5" stroke-width="1.2"/>
+        <circle cx="580" cy="163" r="2" fill="#4F46E5"/>
+        <text x="596" y="167.2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#17162B">Malls, Airports &amp; Venues</text>
+        
+  </g>
+  <rect x="0.5" y="0.5" width="839" height="191" rx="14" fill="none" stroke="#DDD8CE" stroke-width="1"/>
+</svg>

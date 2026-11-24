@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="414" height="192" viewBox="0 0 414 192" role="img" aria-label="Custom Systems &amp; Apps">
+  <defs>
+    <linearGradient id="ocbg_card-custom_light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCFBF8"/>
+      <stop offset="100%" stop-color="#F4F1EA"/>
+    </linearGradient>
+    <linearGradient id="octop_card-custom_light" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1D4ED8" stop-opacity="0"/>
+      <stop offset="22%" stop-color="#1D4ED8" stop-opacity="0.9"/>
+      <stop offset="78%" stop-color="#1D4ED8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#1D4ED8" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="ocglow_card-custom_light" cx="11%" cy="22%" r="36%">
+      <stop offset="0%" stop-color="#1D4ED8" stop-opacity="0.11"/>
+      <stop offset="100%" stop-color="#1D4ED8" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="occlip_card-custom_light">
+      <rect x="0.5" y="0.5" width="413" height="191" rx="14"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#occlip_card-custom_light)">
+    <rect width="414" height="192" fill="url(#ocbg_card-custom_light)"/>
+    <rect width="414" height="192" fill="url(#ocglow_card-custom_light)"/>
+    <rect x="0" y="0" width="414" height="2.5" fill="url(#octop_card-custom_light)"/>
+    <line x1="16" y1="2.5" x2="398" y2="2.5" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1"/>
+
+    
+    <g transform="translate(328, 138)">
+      <rect x="0" y="10" width="14" height="14" rx="3.5" fill="#1D4ED8" fill-opacity="0.16" stroke="#1D4ED8" stroke-opacity="0.25" stroke-width="1.1"/>
+      <rect x="24" y="10" width="14" height="14" rx="3.5" fill="#1D4ED8" fill-opacity="0.22" stroke="#1D4ED8" stroke-opacity="0.6" stroke-width="1.1"/>
+      <rect x="48" y="10" width="14" height="14" rx="3.5" fill="#1D4ED8" fill-opacity="0.16" stroke="#1D4ED8" stroke-opacity="0.25" stroke-width="1.1"/>
+      <line x1="14" y1="17" x2="24" y2="17" stroke="#1D4ED8" stroke-opacity="0.25" stroke-width="1.2"/>
+      <line x1="38" y1="17" x2="48" y2="17" stroke="#1D4ED8" stroke-opacity="0.25" stroke-width="1.2"/>
+      <circle r="2.1" fill="#1D4ED8"><animateMotion dur="3.4s" repeatCount="indefinite" path="M 14 17 L 48 17"/></circle>
+    </g>
+
+    <polygon points="62.00,44.00 52.00,61.32 32.00,61.32 22.00,44.00 32.00,26.68 52.00,26.68" fill="#1D4ED8" fill-opacity="0.11" stroke="#1D4ED8" stroke-opacity="0.5" stroke-width="1.2"/>
+    <g transform="translate(33, 35)" fill="none" stroke="#1D4ED8" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5.5 5L1.5 9l4 4M12.5 5l4 4-4 4M10.5 3l-3 12"/>
+    </g>
+
+    <text x="74" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#17162B">Custom Systems &amp; Apps</text>
+    <text x="74" y="58" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="10.2" font-weight="700" letter-spacing="0.5" fill="#1D4ED8">BESPOKE PLATFORMS</text>
+
+    <rect x="370" y="22" width="24" height="24" rx="7" fill="#FFFFFF" stroke="#DDD8CE" stroke-width="1"/>
+    <g transform="translate(374, 26)" fill="none" stroke="#524F66" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 11L11 5M6 5h5v5"/>
+    </g>
+
+    <text x="22" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.6" fill="#524F66">Tailored operational software, Flutter &amp; web platforms,</text>
+    <text x="22" y="118" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.6" fill="#524F66">customer/supplier portals, and scalable cloud integrations.</text>
+
+    
+        <rect x="22" y="146" width="100" height="26" rx="7" fill="#FFFFFF" stroke="#DDD8CE" stroke-width="1"/>
+        <text x="72.0" y="163" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" fill="#35324A">Mobile &amp; Web</text>
+        
+        <rect x="129" y="146" width="100" height="26" rx="7" fill="#FFFFFF" stroke="#DDD8CE" stroke-width="1"/>
+        <text x="179.0" y="163" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" fill="#35324A">APIs &amp; Cloud</text>
+        
+        <rect x="236" y="146" width="59" height="26" rx="7" fill="#FFFFFF" stroke="#DDD8CE" stroke-width="1"/>
+        <text x="265.5" y="163" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" fill="#35324A">Custom</text>
+        
+  </g>
+
+  <rect x="0.5" y="0.5" width="413" height="191" rx="14" fill="none" stroke="#DDD8CE" stroke-width="1"/>
+</svg>

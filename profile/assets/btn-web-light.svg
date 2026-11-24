@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="40" viewBox="0 0 192 40" role="img" aria-label="qodrasystems.com">
+  <defs>
+    
+    <linearGradient id="obtn_btn-web_light" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FDFCFA"/>
+      <stop offset="100%" stop-color="#F4F1EA"/>
+    </linearGradient>
+    <linearGradient id="obsheen_btn-web_light" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.80"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="obclip_btn-web_light">
+      <rect x="0.5" y="0.5" width="191" height="39" rx="10"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#obclip_btn-web_light)">
+    <rect width="192" height="40" fill="url(#obtn_btn-web_light)"/>
+    <rect x="0" y="1" width="192" height="1" fill="url(#obsheen_btn-web_light)"/>
+    
+    <g transform="translate(23.8, 11.5) scale(0.71)" fill="none" stroke="#4338CA" stroke-width="1.95" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/><path d="M12 2.5a14.5 14.5 0 0 1 0 19 14.5 14.5 0 0 1 0-19Z"/></g>
+    <text x="48.8" y="24.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#17162B">qodrasystems.com</text>
+  </g>
+  <rect x="0.5" y="0.5" width="191" height="39" rx="10" fill="none" stroke="#DDD8CE" stroke-width="1"/>
+</svg>
