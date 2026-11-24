@@ -34,7 +34,7 @@
 
 ### Flagship Platforms
 
-- **[Qodra OS (Unified Business OS)](https://qodrasystems.com/en/systems/erp.html)** — Single-database enterprise platform uniting **ERP & Accounting** (general ledger, e-invoicing, bank reconciliation), **Sales & POS**, **Inventory & Warehouses**, **Purchasing & Suppliers**, **HR & Payroll**, and **CRM & Online Store**. One POS sale updates inventory, accounting entries, e-invoices, and executive dashboards in real time.
+- **[Qodra OS (Unified Business OS)](https://qodrasystems.com/en/systems/erp.html)** — Single-database enterprise platform with **25+ integrated modules** uniting **ERP & Accounting** (general ledger, e-invoicing, bank reconciliation), **Sales & POS**, **Inventory & Warehouses**, **Purchasing & Suppliers**, **HR & Payroll**, and **CRM & Online Store**. One POS sale updates inventory, accounting entries, e-invoices, and executive dashboards in real time.
 - **[Awni & Enterprise AI Agents](https://qodrasystems.com/en/systems/ai.html)** — Governed Arabic & voice AI agents that operate directly inside company systems within employee role permissions, audit trails, and human team approval.
 - **[Indoor Navigation Platform](https://qodrasystems.com/en/systems/navigation.html)** — GPS-free cross-floor visitor wayfinding app and live admin console with maps, notifications, and heatmaps for malls, airports, hospitals, campuses, and museums.
 - **[Custom Systems & Platforms](https://qodrasystems.com/en/services.html)** — Bespoke operational systems, customer & supplier portals, cross-platform mobile & web apps, and enterprise cloud integrations.
